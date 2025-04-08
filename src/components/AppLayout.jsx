@@ -1,18 +1,18 @@
 import React from "react";
-import Home from "../pages/Home";
-import Footer from "./Footer";
-import Nav from "./Nav";
+import Nav from "./Nav.jsx";
+import Footer from "./Footer.jsx";
+import {Outlet} from "react-router";
 
 const AppLayout = () => {
-  return (
-    <div>
-      <Nav />
-      <div>
-        <Home />
-      </div>
-      <Footer />
-    </div>
-  );
+    return (
+        <div className='min-h-screen flex flex-col'>
+            <Nav/>
+            <div className='flex-grow'>
+                <Outlet/>
+            </div>
+            <Footer/>
+        </div>
+    );
 };
 
 export default AppLayout;

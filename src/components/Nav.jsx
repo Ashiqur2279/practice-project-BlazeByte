@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import {Link} from "react-router";
 
 const Nav = () => {
     const [theme, setTheme] = useState("light");
@@ -16,22 +17,22 @@ const Nav = () => {
         <div>
             <div className="navbar bg-base-100 top-0 sticky shadow-xl z-10">
                 <div className="flex-1">
-                    <a className="btn btn-ghost text-2xl font-bold normal-case gap-0">
+                    <Link to='/' className="btn btn-ghost text-2xl font-bold normal-case gap-0">
                         <span className="text-secondary">Byte</span>
                         <span className="text-primary">Blaze</span>
-                    </a>
+                    </Link>
                 </div>
                 <div className="flex-none">
                     <ul className="menu menu-horizontal px-1">
-                        <li className="font-bold">
-                            <a>Home</a>
-                        </li>
-                        <li className="font-bold">
-                            <a>Blog</a>
-                        </li>
-                        <li className="font-bold">
-                            <a>Bookmarks</a>
-                        </li>
+                        <Link to='/' className="btn btn-ghost font-bold">
+                            <p>Home</p>
+                        </Link>
+                        <Link to='blogs' className="btn btn-ghost font-bold">
+                            <p>Blog</p>
+                        </Link>
+                        <Link to='bookmarks' className="btn btn-ghost font-bold">
+                            <p>Bookmarks</p>
+                        </Link>
                         <li>
                             <label className="flex cursor-pointer gap-2">
                                 <svg
