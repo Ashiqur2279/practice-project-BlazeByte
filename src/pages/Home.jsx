@@ -4,7 +4,7 @@ import WelcomeText from "../components/WelcomeText";
 const Home = () => {
     return (
         <div>
-            <div className="flex flex-col justify-center items-center">
+            <div className="h-full">
                 <WelcomeText/>
             </div>
         </div>
