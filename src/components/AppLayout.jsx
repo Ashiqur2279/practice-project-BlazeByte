@@ -1,20 +1,21 @@
 import React from "react";
-import Nav from "./Nav.jsx";
+import { Outlet, useNavigation } from "react-router-dom";
 import Footer from "./Footer.jsx";
-import {Outlet} from "react-router";
+import Loader from "./Loader.jsx";
+import Nav from "./Nav.jsx";
 
 const AppLayout = () => {
-    return (
-        <div className="min-h-screen flex flex-col">
-            <Nav/>
-            <main className="flex-grow">
-                <Outlet/>
-            </main>
+  const navigation = useNavigation();
+  return (
+    <div className="min-h-screen flex flex-col">
+      <Nav />
+      <main className="flex-grow">
+        {navigation.state === "loading" ? <Loader /> : <Outlet />}
+      </main>
 
-            <Footer/>
-
-        </div>
-    );
+      <Footer />
+    </div>
+  );
 };
 
 export default AppLayout;
